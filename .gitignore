@@ -2,6 +2,7 @@
 bin/yamlssm-sample
 
 tmp/*
+docker-compose_ecs.yml
 
 ### Other ###
 .idea/
