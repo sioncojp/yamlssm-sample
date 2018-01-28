@@ -1,0 +1,13 @@
+development:
+  host: mysql
+  port: 3306
+  database: hoge_dev
+  username: dev
+  password: dev
+
+production:
+  host: mysql
+  port: 3306
+  database: hoge
+  username: root
+  password: ssm://prod.yamlssm-sample.mysql.password

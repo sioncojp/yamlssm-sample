@@ -1,0 +1,29 @@
+mysql:
+  image: yamlssm-sample_mysql
+  container_name: "yamlssm-sample_mysql"
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+  tty: true
+dev:
+  image: yamlssm-sample
+  container_name: "yamlssm-sample-dev"
+  environment:
+    APP_ENV: development
+  ports:
+    - "80:8080"
+  links:
+    - mysql
+prod:
+  image: yamlssm-sample
+  container_name: "yamlssm-sample-prod"
+  environment:
+    - APP_ENV=production
+    - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+    - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+    - AWS_REGION=${AWS_REGION}
+  ports:
+    - "81:8080"
+  links:
+    - mysql

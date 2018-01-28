@@ -1,0 +1,11 @@
+*.pid
+bin/yamlssm-sample
+
+tmp/*
+
+### Other ###
+.idea/
+.envrc
+
+### .gitkeep ###
+!.gitkeep
